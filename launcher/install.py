@@ -10,6 +10,7 @@ def update(app):
 	versw.write(json.dumps(vers))
 	for file in requests.get(f'https://api.github.com/repos/Pietro303HD/Launcher/contents/{app}/').json():
 		path = file['path']
+		print(requests.get(file['download_url']).text)
 		open(f'../{path}', 'w').write(requests.get(file['download_url']).text)
 	print(f'{app} has been updated!')
 	
