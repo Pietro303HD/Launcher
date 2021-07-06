@@ -1,3 +1,4 @@
 Update 0.5 out!
 - Support for changelogs!
-- And a sickass title!
+- A sickass title!
+- A version command to check the version of everything!
