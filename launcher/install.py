@@ -2,7 +2,6 @@ import requests
 import os
 import json
 def update(app):
-
 	# get all filenames on a folder
 	# rewrite/write them all.
 
@@ -20,8 +19,3 @@ def update(app):
 		path = file['path']
 		open(f'../{path}', 'w').write(requests.get(file['download_url']).text)
 	print(f'{app} has been updated!')
-
-	
-
-	
-
