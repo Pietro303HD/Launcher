@@ -3,10 +3,10 @@ import os
 import pyautogui
 import json
 from io import BytesIO
-
 import discord
 
-settings = json.load(open('configs.json')
+settings = json.load(open('settings.json'))
+
 token = settings['token']
 prefix = settings['prefix']
 
@@ -25,6 +25,9 @@ async def on_message(message):
     if message.content == f'{prefix}move':
         response = 'testando'
         await message.channel.send(response)
+    if message.content == f'{prefix}status':
+        member = message.author
+        embed = discord.Embed(title=f'{member.name} is', description= f'{member.activities[0].name}', color='GREEN')
     if message.content == f'{prefix}screenshot':
     	image = pyautogui.screenshot()
     	with BytesIO() as image_binary:
