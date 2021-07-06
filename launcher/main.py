@@ -1,9 +1,6 @@
 import requests
 import json
-
 from install import update
-
-# kkk
 
 print("""
    ___ _      _                 __                        _               
@@ -11,7 +8,6 @@ print("""
  / /_)/ |/ _ \ __| '__/ _ \   / /  / _` | | | | '_ \ / __| '_ \ / _ \ '__|
 / ___/| |  __/ |_| | | (_) | / /__| (_| | |_| | | | | (__| | | |  __/ |   
 \/    |_|\___|\__|_|  \___/  \____/\__,_|\__,_|_| |_|\___|_| |_|\___|_|
-
 """)
 
 local = json.load(open('../versions.json',))
@@ -26,7 +22,7 @@ for app, ver in version.json().items():
         print()
         prompt = input('> ')
         if prompt == 'y': update(app)
-  
+
 while True:
     print('What would you like to do?')
     cmd = input('> ')
