@@ -24,6 +24,7 @@ for app, ver in version.json().items():
         print('Here are the change logs:')
         print()
         print(requests.get(f'https://raw.githubusercontent.com/Pietro303HD/Launcher/master/{app}/changelogs.txt').text)
+        print()
         prompt = input('> ')
         if prompt == 'y': update(app)
   
