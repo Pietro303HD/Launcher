@@ -17,14 +17,13 @@ print("""
 local = json.load(open('../versions.json',))
 version = requests.get('https://raw.githubusercontent.com/Pietro303HD/Launcher/master/versions.json')
 
-print(local)
-print(version.json())
 for app, ver in version.json().items():
     print(f'{app} : {ver}')
     if ver > local[app]:
         print(f'{app} has a update! Would you like to update it?')
         print('Here are the change logs:')
-        print(requests.get(f'https://raw.githubusercontent.com/Pietro303HD/Launcher/master/{app}/changelog.txt').text)
+        print()
+        print(requests.get(f'https://raw.githubusercontent.com/Pietro303HD/Launcher/master/{app}/changelogs.txt').text)
         prompt = input('> ')
         if prompt == 'y': update(app)
   
@@ -32,4 +31,5 @@ while True:
     print('What would you like to do?')
     cmd = input('> ')
     if cmd == 'version':
-      print('next update')
+      for key, value in local.items():
+         print(f'{key} - {value}')
