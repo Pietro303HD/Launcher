@@ -5,7 +5,7 @@ def update(app):
 	# get all filenames on a folder
 	# rewrite/write them all.
 	vers = json.load(open('../versions.json'))
-	vers[app] = requests.get('https://raw.githubusercontent.com/Pietro303HD/Launcher/master/versions.json')[app]
+	vers[app] = requests.get('https://raw.githubusercontent.com/Pietro303HD/Launcher/master/versions.json').json()[app]
 	versw = open(f'../versions.json', 'w')
 	versw.write(json.dumps(vers))
 	for file in requests.get(f'https://api.github.com/repos/Pietro303HD/Launcher/contents/{app}/').json():
