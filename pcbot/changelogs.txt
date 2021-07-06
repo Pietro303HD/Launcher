@@ -1,4 +1,2 @@
-Update 1.0
-- Adding pcbot to my launcher.
-- This bot can send screenshots of your pc,
-no matter what you're doing. Be careful.
+Update 1.1
+- New WIP status command.
