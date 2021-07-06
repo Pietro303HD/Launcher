@@ -18,7 +18,6 @@ local = json.load(open('../versions.json',))
 version = requests.get('https://raw.githubusercontent.com/Pietro303HD/Launcher/master/versions.json')
 
 for app, ver in version.json().items():
-    print(f'{app} : {ver}')
     if ver > local[app]:
         print(f'{app} has a update! Would you like to update it?')
         print('Here are the change logs:')
